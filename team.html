@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Es Shemen International School</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+<!--     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    
+    Changed font to Nunito
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Swiper JS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2; /* Keeps a 3:2 aspect ratio */
+        /*max-height: 90vh;     /* Keeps it from being too tall on small screens */
+        overflow: hidden;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        background: white;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 720px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        .swiper {
+          aspect-ratio: 4 / 3;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+   
+    <div class="container-fluid bg-light pt-3 d-none d-md-block">
+      <div class="container mb-3 px-4">
+        <div class="row">
+          <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center"></div>
+          </div>
+    
+          <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+              <a class="text-success px-3 social-link" href="https://x.com/es_shemen_?s=21" target="_blank">
+                <i class="fas fa-hashtag"></i> <!-- Changed from X logo to Hashtag Icon -->
+              </a>
+              <a class="text-success px-3 social-link" href="tel:+256782345678">
+                <i class="fas fa-phone"></i>
+              </a>
+<!--               <a class="text-success px-3 social-link" href="https://www.tiktok.com" target="_blank">
+                <i class="fas fa-play-circle"></i> Changed from TikTok logo to Play Icon
+              </a> -->
+              <a class="text-success px-3 social-link" href="https://www.instagram.com/esshemen?igsh=azBwbG00YmJrYWJq" target="_blank">
+                <i class="fab fa-instagram"></i>              
+              <a class="text-success px-3 social-link" href="https://wa.me/+256782345678" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Navbar Start -->
+    
+    <div class="container-fluid bg-light position-relative shadow">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 pl-1" 
+        style="display: flex; align-items: center; justify-content: space-between; width: 100%;"
+      > <!-- Removed nav from px-lg-5 class to remove padding -->
+        <div class="logo" style="display: flex; align-items: center; flex: 1 1 auto; min-width: 0;">
+          <a
+          href="index.html"
+          class="navbar-brand font-weight-bold text-success"
+          style="font-size: 35px; display: flex; align-items: center; flex-wrap: wrap;">
+            <img src="img/staff pics2/logo - Copy.png" alt="Logo" style="width: 150px; height: auto; flex-shrink: 0;"/>
+            <!-- Edited logo.png to make logo - Copy.png with a bigger logo as requested. Added flex-shrink to 0 to prevent logo from shrinking -->
+            <span style="text-wrap: balance;">Es Shemen International School</span>
+          </a>
+        </div>
+
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div 
+            class="navbar-nav font-weight-bold mx-auto py-0" 
+            style="display: flex; align-items: center; flex-grow: 2; flex-shrink: 0; white-space: nowrap;"
+          > <!-- Removed mx-lg-5 class, set flex-shrink to 0, and white-space to nowrap  to remove horizontal padding -->
+            <a href="index.html" class="nav-item nav-link active text-success">Home</a>
+            <a href="about.html" class="nav-item nav-link text-success">About Us</a>
+            <a href="class.html" class="nav-item nav-link text-success">Learning</a>
+            <a href="team.html" class="nav-item nav-link text-success">Teachers</a>
+            <a href="gallery.html" class="nav-item nav-link text-success" >Gallery</a>
+            <a href="blog.html" class="nav-item nav-link text-success" >Blog</a>
+            <!-- <a href="contact.html" class="nav-item nav-link text-success" >Contact</a> -->
+          </div>
+          <a href="contact.html" class="btn btn-primary px-4" style="background-color: green; border-color: green;">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+<!--     <div class="container-fluid  mb-5"
+    style="background: linear-gradient(135deg, #050c52, #324e2b);"
+    >
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+        <h3 class="display-3 font-weight-bold text-white">Our Teachers</h3>
+        
+      </div>
+    </div>
+        <h3 class="display-3 font-weight-bold text-white">Our Teachers</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href="">Home</a></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- Header End -->
+
+  <!-- Swiper Start -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+<!--       <div class="swiper-slide"><img class="img-fluid rounded" src="img/Independence2/Independence2_14.jpg" alt="Independence Day Celebration"/></div>
+      <div class="swiper-slide"><img class="img-fluid rounded" src="img/Field trip2/2 - Copy.jpg" alt="Teacher 2"/></div> -->
+      <div class="swiper-slide"><img class="img-fluid rounded" src="img/Field trip2/41 - Copy.jpg" alt="Teacher"/></div>
+      <div class="swiper-slide"><img class="img-fluid rounded" src="img/carousel/carousel2.jpg" alt="Teacher"/></div>
+      <div class="swiper-slide"><img class="img-fluid rounded" src="img/carousel/caurosel.jpg" alt="Teachers"/></div>
+<!--       <div class="swiper-slide"><img class="img-fluid rounded" src="img/carousel/certificate.jpg" alt="Teacher Handing Out Certificate"/></div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initializing Swiper -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      effect: "flip",
+      grabCursor: true,
+
+      keyboard: {
+        enabled: true,
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+  <!-- Swiper End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="text-center pb-2">
+          <h1 class="mb-4">Meet Our Team</h1>
+        </div>
+
+        <!-- Directors Section -->
+        <section class="mb-5">
+          <h3 class="text-center mb-4">Directors</h3>
+          <div class="row justify-content-center">
+            <!-- Teacher 1 -->
+            <div class="col-12 col-md-6 col-lg-4 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0080.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Mrs. Pamela Renee Dokotum</h4>
+              <i>Director/ Administrator</i>
+            </div>
+            <!-- Teacher 2 -->
+            <div class="col-12 col-md-6 col-lg-4 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/ruth.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Angom Ruth</h4>
+              <i>Principal</i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Supervisors Section -->
+        <section class="mb-5">
+          <h3 class="text-center mb-4">Supervisors</h3>
+          <div class="row justify-content-center">
+            <!-- Teacher 3 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0052.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Arionget Rose</h4>
+              <i>Supervisor pre-school</i>
+            </div>
+            <!-- Teacher 4 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0065.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Opio Allan</h4>
+              <i>Supervisor grade 1</i>
+            </div>
+            <!-- Teacher 5 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0045.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Hobreno Neema</h4>
+              <i>Supervisor Grade 2</i>
+            </div>
+            <!-- Teacher 6 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/leo.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Ogwali Leo</h4>
+              <i>Supervisor grade 5-9</i>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <!-- Teacher 7 -->
+            <div class="col-12 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0055.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Achenge Joyce</h4>
+              <i>Supervisor play group</i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support Staff Section -->
+        <section class="mb-5">
+          <h3 class="text-center mb-4">Support Staff</h3>
+          <div class="row justify-content-center">
+            <!-- Teacher 8 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0057.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Amony Brenda</h4>
+              <i>Accountant</i>
+            </div>
+            <!-- Teacher 9 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0062.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Amodoi Babra</h4>
+              <i>Chef</i>
+            </div>
+            <!-- Teacher 10 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0066.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Ogweng Tonny</h4>
+              <i>Security guard</i>
+            </div>
+            <!-- Teacher 11 -->
+            <div class="col-12 col-sm-6 col-lg-3 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/DSC_0067.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Akullu Dorish</h4>
+              <i>Cleaner</i>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <!-- Teacher 12 -->
+            <div class="col-12 text-center team mb-5">
+              <div class="position-relative overflow-hidden mb-4 rounded-circle mx-auto" style="width: 200px; height: 200px;">
+                <img class="img-fluid rounded-circle" src="img/staff pics2/lonah.jpg" alt="Teacher 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light text-center mr-2 px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light text-center px-0" style="width:38px; height:38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <h4>Adongo Lonah</h4>
+              <i>Front Desk</i>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Team End -->
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+      <div class="container p-0">
+        <div class="text-center pb-2 text-success">
+          <h1 class="mb-4">What Parents Say!</h1>
+        </div>
+
+        <div class="owl-carousel testimonial-carousel">
+
+          <div class="testimonial-item px-3">
+            <div class="bg-light shadow-sm rounded mb-4 p-4 overflow-hidden">
+              <h3 class="fas fa-quote-left text-success mr-3"></h3>
+              "That's a really good initiative. My son is really enjoying the reading and happy to share the story with us."
+              </div>
+              <div class="d-flex align-items-centerd-flex align-items-center">
+              <img
+                class="rounded-circle"
+                src="img/staff pics2/placeholder_man.png"
+                style="width: 70px; height: 70px";
+                alt="Parent Image"
+                />
+              <div class="pl-3">
+                <h5>Vijaya Kumar</h5>
+                <i>Business man</i>
+                </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item px-3">
+            <div class="bg-light shadow-sm rounded mb-4 p-4">
+              <h3 class="fas fa-quote-left text-success mr-3"></h3>
+              "I like the preponderance of vegetables and fruits good for health. Variety in diet is evident too, which avoids teduim."
+            </div>
+            <div class="d-flex align-items-center">
+              <img
+                class="rounded-circle"
+                src="img/staff pics2/placeholder_man.png"
+                style="width: 70px; height: 70px"
+                alt="Parent Image"
+              />
+              <div class="pl-3">
+                <h5>Mr. Patrick Agona</h5>
+                <i>Architect</i>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item px-3">
+            <div class="bg-light shadow-sm rounded mb-4 p-4">
+              <h3 class="fas fa-quote-left text-success mr-3"></h3>
+              "We are enjoying our books and talking about the charaters.Thank you for the opporuntiy to relive memories."
+            </div>
+            <div class="d-flex align-items-center">
+              <img
+                class="rounded-circle"
+                src="img/staff pics2/placeholder_woman.png"
+                style="width: 70px; height: 70px"
+                alt="Parent Image"
+              />
+              <div class="pl-3">
+                <h5>Debra Aloyo</h5>
+                <i>Banker</i>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item px-3">
+            <div class="bg-light shadow-sm rounded mb-4 p-4">
+              <h3 class="fas fa-quote-left text-success mr-3"></h3>
+              " I only wish you know how proud we are  with ES SHEMEN INTERNATIONAL SCHOOL."
+            </div>
+            <div class="d-flex align-items-center">
+              <img
+                class="rounded-circle"
+                src="img/staff pics2/placeholder_man.png"
+                style="width: 70px; height: 70px"
+                alt="Parent Image"
+              />
+              <div class="pl-3">
+                <h5>Engineer Andrew Ocepa</h5>
+                <i>Engineer</i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <!-- Testimonial End -->
+
+   <!-- Footer Start -->
+  <div class="container-fluid  text-white mt-5 py-5 px-sm-3 px-md-5"
+  style="background: linear-gradient(135deg, #050c52, #324e2b);"
+  >
+  <div class="row pt-5 justify-content-around">
+    <!-- <div class="col-lg-3 col-md-6 mb-5">
+      <a
+        href="#"
+        class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+        style="font-size: 30px; line-height: 30px"
+      >
+        <img src="img/staff pics2/logo - Copy.png" alt="Logo" style="width: 200px; height: auto;" /><br>
+        <span style="color: #28a745; text-wrap: balance;">Es Shemen International School</span>
+      </a>
+      <p class="text-white">
+        Es Shemen is dedicated to providing quality education that empowers students with the knowledge, skills, and character needed to excel in a global society, all within a nurturing and supportive environment.
+      </p>
+
+      <div class="d-flex justify-content-start mt-4">
+        <a
+  class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+  style="width: 38px; height: 38px;"
+  href="#"
+  >
+  <i class="fab fa-twitter"></i>
+  </a>
+
+        <a
+          class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+          style="width: 38px; height: 38px;"         
+          href="#"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+  class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+  style="width: 38px; height: 38px;"
+  href="#"
+  >
+  <i class="fab fa-linkedin-in"></i>
+  </a>
+        <a
+          class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+          style="width: 38px; height: 38px;"
+          href="#"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+      </div>
+    </div> -->
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: #28a745;">Get In Touch</h3>
+      <div class="d-flex">
+        <h4 class="fa fa-map-marker-alt" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;">Address</h5>
+          <p class="text-white">Plot 9, Dokolo Road,<br>Senior Quarters B,<br>Lira City East,<br>Uganda</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <h4 class="fa fa-envelope" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;">Email</h5>
+          <p class="text-white">esshemen22@gmail.com</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <h4 class="fas fa-phone-alt" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;"">Phone</h5>
+          <p class="text-white">+256 777 230 537</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: green;"">Quick Links</h3>
+      <div class="d-flex flex-column justify-content-start">
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Home</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>About Us</a
+        >
+        <a class="text-white mb-2" href="team.html"
+          ><i class="fa fa-angle-right mr-2"></i>Teachers</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Programs</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Admissions</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Blog</a
+        >
+        <a class="text-white" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+        >
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: #28a745;">Newsletter</h3>
+      <form action="#">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control border-0 py-4"
+            placeholder="Your Name"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control border-0 py-4"
+            placeholder="Your Email"
+            required="required"
+          />
+        </div>
+        <div>
+          <button class="btn btn-success btn-block border-0 py-3" type="submit" >
+  Subscribe
+  </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex mt-4" style="align-items: center; justify-content: center; gap: 15px; padding: 15px;">
+    <a
+    class="btn btn-outline-success rounded-circle text-center mr-2"
+    style="width: 38px; height: 38px;"
+    href="https://x.com/es_shemen_?s=21"
+    >
+      
+ 
+      <i class="fas fa-hashtag"></i>
+    </a>
+<!-- 
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"         
+      href="#"
+      ><i class="fab fa-facebook-f"></i
+    ></a> -->
+
+<!--     <a
+    class="btn btn-outline-success rounded-circle text-center mr-2"
+    style="width: 38px; height: 38px;"
+    href="#"
+    >
+      <i class="fab fa-linkedin-in"></i>
+    </a> -->
+
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"
+      href="https://www.instagram.com/esshemen?igsh=azBwbG00YmJrYWJq"
+      ><i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"
+      href="https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7"
+      ><i class="fab fa-youtube"></i>
+    </a>
+
+  </div>
+  <br>
+
+  <div
+    class="container-fluid pt-5"
+    style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;"
+  >
+    <p class="m-0 text-center text-white">
+      &copy;
+      <a style="color: #28a745;" href="#">Es Shemen International School</a>.
+      All Rights Reserved.
+      <br />
+      Designed and Developed by
+      <a style="color: #28a745;"" href="https://kakebetechnologies.com"
+        >Kakebe Technologies</a
+      >
+    </p>
+  </div>
+  </div>
+<!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top" style="background-color: green; border-color: green;"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+  </body>
+</html>

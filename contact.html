@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ed Shemen International School</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="..." name="keywords" />
+    <meta content="..." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+<!--     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    
+    Changed font to Nunito
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 pl-1"
+      > <!-- Removed px-lg-5 class to remove left padding -->
+      <div class="logo" style="display: flex; align-items: center; flex: 1 1 auto; min-width: 0;">
+        <a
+        href="index.html"
+        class="navbar-brand font-weight-bold text-success"
+        style="font-size: 35px; display: flex; align-items: center; flex-wrap: wrap;">
+          <img src="img/staff pics2/logo - Copy.png" alt="Logo" style="width: 150px; height: auto; flex-shrink: 0;"/>
+          <!-- Edited logo.png to make logo - Copy.png with a bigger logo as requested. Added flex-shrink to 0 to prevent logo from shrinking -->
+          <span style="text-wrap: balance;">Es Shemen International School</span>
+        </a>
+      </div>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+          style="flex-shrink: 0; white-space: nowrap;"
+        > <!-- Added style rule to prevent text wrapping -->
+          <div class="navbar-nav font-weight-bold mx-auto py-0">
+            <a href="index.html" class="nav-item nav-link " style="color: #28a745;">Home</a>
+            <a href="about.html" class="nav-item nav-link" style="color: #28a745;">About Us</a>
+            <a href="class.html" class="nav-item nav-link" style="color: #28a745;">Learning</a>
+            <a href="team.html" class="nav-item nav-link" style="color: #28a745;">Teachers</a>
+            <a href="gallery.html" class="nav-item nav-link" style="color: #28a745;">Gallery</a>
+            <a href="blog.html" class="nav-item nav-link" style="color: #28a745;">Blog</a>
+            <!-- <a href="contact.html" class="nav-item nav-link active" style="color: #28a745;">Contact</a> -->
+          </div>
+          <a href="contact.html" class="btn btn-primary px-4" style="background-color: green; border-color: greenS;">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid  mb-5"
+    style="background: linear-gradient(135deg, #050c52, #324e2b);"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <h3 class="display-3 font-weight-bold text-white">Contact Us</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href=""></a></p>
+          <p class="m-0 px-2"></p>
+          <p class="m-0"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Contact Start -->
+  <div class="container-fluid pt-5>
+    <div class="container">
+      <div class="text-center pb-2">
+        
+        <h1 class="mb-4">We’re Here to Help You</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 mb-5">
+          <div class="contact-form">
+            <div id="success"></div>
+            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  required="required"
+                  data-validation-required-message="Please enter your name"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                  required="required"
+                  data-validation-required-message="Please enter your email"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Subject"
+                  required="required"
+                  data-validation-required-message="Please enter a subject"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <textarea
+                  class="form-control"
+                  rows="6"
+                  id="message"
+                  placeholder="Your Message"
+                  required="required"
+                  data-validation-required-message="Please enter your message"
+                ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div>
+                <button
+                  class="btn btn-primary py-2 px-4" style="background-color: green; border-color:green;"
+                  type="submit"
+                  id="sendMessageButton"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+          <p>
+            At Es Shemen, we value your questions, feedback, and inquiries. Whether you're looking for more information about our services or need assistance, our team is here to provide the support you need. Reach out today, and let's connect!
+          </p>
+          <div class="d-flex">
+            <i
+              class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-success text-secondary rounded-circle"
+              style="width: 45px; height: 45px;"
+            ></i>
+            <div class="pl-3">
+              <h5>Address</h5>
+              <p>Plot 9, Dokolo Road,<br>Senior Quarters B,<br>Lira City East,<br>Uganda</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-success text-secondary rounded-circle"
+              style="width: 45px; height: 45px;"
+            ></i>
+            <div class="pl-3">
+              <h5>Email</h5>
+              <p>info@esis.ac.ug/edshemen22@gmail.com</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-success text-secondary rounded-circle"
+              style="width: 45px; height: 45px;"
+            ></i>
+            <div class="pl-3">
+              <h5>Phone</h5>
+              <p>
+                +256 777 230 537 </p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="far fa-clock d-inline-flex align-items-center justify-content-center bg-success text-secondary rounded-circle"
+              style="width: 45px; height: 45px; background-color: green; border-color: green;"
+            ></i>
+            <div class="pl-3">
+              <h5>Opening Hours</h5>
+              <strong>Monday - Friday:</strong>
+              <p class="m-0">08:00 AM - 06:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 p-2 p-md-2 order-md-last bg-light" style="object-fit: cover;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.739644530048!2d32.81628369678954!3d2.250976600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770bb92b7b8c36d%3A0xcc7e812a09d97f5a!2sLira%20University!5e0!3m2!1sen!2sug!4v1690184983200!5m2!1sen!2sug" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <style>
+            @media(max-width:730px){
+              iframe{
+                width: 100%;
+                height: 400px;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Contact End -->
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid  text-white mt-5 py-5 px-sm-3 px-md-5"
+  style="background: linear-gradient(135deg, #050c52, #324e2b);"
+  >
+  <div class="row pt-5 justify-content-around">
+    <!-- <div class="col-lg-3 col-md-6 mb-5">
+      <a
+        href="#"
+        class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+        style="font-size: 30px; line-height: 30px"
+      >
+        <img src="img/staff pics2/logo - Copy.png" alt="Logo" style="width: 200px; height: auto;" /><br>
+        <span style="color: #28a745; text-wrap: balance;">Es Shemen International School</span>
+      </a>
+      <p class="text-white">
+        Es Shemen is dedicated to providing quality education that empowers students with the knowledge, skills, and character needed to excel in a global society, all within a nurturing and supportive environment.
+      </p>
+
+      <div class="d-flex justify-content-start mt-4">
+        <a
+  class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+  style="width: 38px; height: 38px;"
+  href="#"
+  >
+  <i class="fab fa-twitter"></i>
+  </a>
+
+        <a
+          class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+          style="width: 38px; height: 38px;"         
+          href="#"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+  class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+  style="width: 38px; height: 38px;"
+  href="#"
+  >
+  <i class="fab fa-linkedin-in"></i>
+  </a>
+        <a
+          class="btn btn-outline-success rounded-circle text-center mr-2 px-0"
+          style="width: 38px; height: 38px;"
+          href="#"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+      </div>
+    </div> -->
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: #28a745;">Get In Touch</h3>
+      <div class="d-flex">
+        <h4 class="fa fa-map-marker-alt" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;">Address</h5>
+          <p class="text-white">Plot 9, Dokolo Road,<br>Senior Quarters B,<br>Lira City East,<br>Uganda</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <h4 class="fa fa-envelope" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;">Email</h5>
+          <p class="text-white">esshemen22@gmail.com</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <h4 class="fas fa-phone-alt" style="color: green;"></h4>
+        <div class="pl-3">
+          <h5 style="color: #28a745;"">Phone</h5>
+          <p class="text-white">+256 777 230 537</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: green;"">Quick Links</h3>
+      <div class="d-flex flex-column justify-content-start">
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Home</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>About Us</a
+        >
+        <a class="text-white mb-2" href="team.html"
+          ><i class="fa fa-angle-right mr-2"></i>Teachers</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Programs</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Admissions</a
+        >
+        <a class="text-white mb-2" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Blog</a
+        >
+        <a class="text-white" href="#"
+          ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+        >
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-5">
+      <h3 style="color: #28a745;">Newsletter</h3>
+      <form action="#">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control border-0 py-4"
+            placeholder="Your Name"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control border-0 py-4"
+            placeholder="Your Email"
+            required="required"
+          />
+        </div>
+        <div>
+          <button class="btn btn-success btn-block border-0 py-3" type="submit" >
+  Subscribe
+  </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex mt-4" style="align-items: center; justify-content: center; gap: 15px; padding: 15px;">
+    <a
+    class="btn btn-outline-success rounded-circle text-center mr-2"
+    style="width: 38px; height: 38px;"
+    href="https://x.com/es_shemen_?s=21"
+    >
+      <i class="fab fa-twitter"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"         
+      href="#"
+      ><i class="fab fa-facebook-f"></i
+    ></a>
+
+<!--     <a
+    class="btn btn-outline-success rounded-circle text-center mr-2"
+    style="width: 38px; height: 38px;"
+    href="#"
+    >
+      <i class="fab fa-linkedin-in"></i>
+    </a> -->
+
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"
+      href="https://www.instagram.com/esshemen?igsh=azBwbG00YmJrYWJq"
+      ><i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      class="btn btn-outline-success rounded-circle text-center mr-2"
+      style="width: 38px; height: 38px;"
+      href="https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7https://youtube.com/@esshemen?si=zGt8X8lI5zH_MEf7"
+      ><i class="fab fa-youtube"></i>
+    </a>
+
+  </div>
+  <br>
+
+  <div
+    class="container-fluid pt-5"
+    style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;"
+  >
+    <p class="m-0 text-center text-white">
+      &copy;
+      <a style="color: #28a745;" href="#">Es Shemen International School</a>.
+      All Rights Reserved.
+      <br />
+      Designed and Developed by
+      <a style="color: #28a745;"" href="https://kakebetechnologies.com"
+        >Kakebe Technologies</a
+      >
+    </p>
+  </div>
+  </div>
+<!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top"style="background-color: green; border-color: green;"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
