@@ -8,7 +8,10 @@
     <meta content="..." name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
 
     <!-- Google Web Fonts -->
 <!--     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -88,7 +91,7 @@
           href="index.html"
           class="navbar-brand font-weight-bold text-success"
           style="font-size: 35px; display: flex; align-items: center; flex-wrap: wrap;">
-            <img src="img/staff pics2/logo - Copy.png" alt="Logo" style="width: 150px; height: auto; flex-shrink: 0;"/> 
+            <img src="img/logo/logo - Copy.png" alt="Logo" style="width: 150px; height: auto; flex-shrink: 0;"/> 
             <!-- Edited logo.png to make logo - Copy.png with a bigger logo as requested. Added flex-shrink to 0 to prevent logo from shrinking -->
             <span style="text-wrap: balance;">Es Shemen International School</span>
           </a>
@@ -124,15 +127,22 @@
 </div>
     <!-- Navbar End -->
 
-    
-    <!-- Header Start -->
+
    <!-- Header Start -->
 <div class="container-fluid p-0">
   <!-- Video Header -->
-  <video class="w-100" style="max-height: 400px; object-fit: cover;" autoplay loop>
-    <source src="img/video/ESH.mp4" type="video/mp4">
-   
-  </video>
+  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; margin-top: 1rem;">
+    <iframe 
+      src="https://www.youtube.com/embed/9SAcin0osb8?autoplay=1&mute=1&rel=0&controls=0&modestbranding=1" 
+      title="YouTube video player" 
+      style="position:absolute; top:0; left:0; width:100%; height: 100%;" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media; clipboard-write; gyroscope; picture-in-picture" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
 
   <!-- Header Content -->
   <!-- <div class="d-flex flex-column align-items-center justify-content-center text-center position-absolute w-100" 
@@ -373,7 +383,7 @@ style="background: linear-gradient(135deg, #050c52, #324e2b);"
       class="navbar-brand font-weight-bold text-success m-0 mb-4 p-0"
       style="font-size: 30px; line-height: 30px"
     >
-    <img src="img/staff pics2/logo.png" alt="Logo" style="width: 100px; height: auto;" />
+    <img src="img/logo/logo.png" alt="Logo" style="width: 100px; height: auto;" />
       <span >Es Shemen</span>
     </a>
     <p class="text-white">
