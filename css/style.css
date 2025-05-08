@@ -9900,3 +9900,12 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
   color: rgba(255, 255, 255, 0.8);
 }
+
+.footer-links a {
+  color: #fff;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  text-decoration: none;
+}
