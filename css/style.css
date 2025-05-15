@@ -9911,3 +9911,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #28a745;
   text-decoration: none;
 }
+
+footer .row .col-lg-3.col-md-3.mb-5.mx-auto div a {
+  padding-left: 2rem;
+}
