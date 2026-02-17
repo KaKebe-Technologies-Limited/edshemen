@@ -49,6 +49,53 @@
         });
     }
 
+    // Function to initialize testimonial Swiper
+    function initTestimonialSwiper() {
+        // Destroy existing Swiper instance if it exists to prevent re-initialization issues
+        if (window.testimonialSwiperInstance && window.testimonialSwiperInstance.destroy) {
+            window.testimonialSwiperInstance.destroy(true, true);
+        }
+
+        const testimonialSwiperElement = document.querySelector(".testimonialSwiper");
+        if (testimonialSwiperElement) {
+            window.testimonialSwiperInstance = new Swiper(testimonialSwiperElement, {
+                loop: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".testimonial-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".testimonial-button-next",
+                    prevEl: ".testimonial-button-prev",
+                },
+                lazy: { // Enable lazy loading for testimonials
+                    loadPrevNext: true,
+                    loadOnTransitionStart: true,
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+        }
+    }
+
+
     // Barba.js Initialization and Page Transitions
     if (window.barba) { // Check if Barba.js is loaded
         barba.init({
@@ -73,6 +120,7 @@
                         onComplete: () => {
                             // Re-initialize scripts for the new page
                             $(window).trigger('scroll'); // Re-trigger scroll to activate ScrollTriggers
+                            initTestimonialSwiper(); // Re-initialize testimonial Swiper
                         }
                     });
                 }
@@ -87,6 +135,7 @@
                     // Re-trigger scroll to activate ScrollTriggers for the new page content
                     $(window).trigger('scroll');
                     initAnimatedGradients();
+                    initTestimonialSwiper(); // Re-initialize testimonial Swiper
                 }
             }]
         });
@@ -108,6 +157,7 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
         initAnimatedGradients();
+        initTestimonialSwiper(); // Initialize testimonial Swiper on initial load
         // If something loads late (fonts/CSS), run once more after full load.
         $(window).on('load', initAnimatedGradients);
     });
@@ -139,43 +189,6 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-
-    // Testimonials Swiper initialization
-    const testimonialSwiper = new Swiper(".testimonialSwiper", {
-        loop: true,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".testimonial-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".testimonial-button-next",
-            prevEl: ".testimonial-button-prev",
-        },
-        lazy: { // Enable lazy loading for testimonials
-            loadPrevNext: true,
-            loadOnTransitionStart: true,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            },
-        },
-    });
-
 
     // GSAP Animations
 
@@ -282,39 +295,54 @@
     const featureItems = gsap.utils.toArray(".ftco-section .services-2");
     
     if (facilitiesContainer && featureItems.length > 0) {
-        // Set initial state for all items to be hidden, except the first pair
+        // Set initial state for all items to be hidden
         gsap.set(featureItems, { opacity: 0, y: 50 });
-        gsap.set(featureItems[0], { opacity: 1, y: 0 }); // First item visible
-        gsap.set(featureItems[1], { opacity: 1, y: 0 }); // Second item visible
+
+        // Calculate total number of pairs
+        const numPairs = Math.ceil(featureItems.length / 2);
+        // Define scroll distance needed for each pair to transition and be visible
+        const scrollPerPair = window.innerHeight * 0.7; // 70% of viewport height per pair animation
 
         // Create a master timeline for the pinned section
         const masterTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: facilitiesContainer,
                 pin: true,
-                start: "top top",
-                end: () => "+=" + (window.innerHeight * (featureItems.length / 2 - 1)), // Pin duration
+                start: "top top", // Start pinning when the top of facilitiesContainer hits the top of the viewport
+                end: `+=${numPairs * scrollPerPair}`, // Total scroll length for the animation sequence
                 scrub: 1, // Smoothly scrub animations
-                // markers: true,
+                // markers: true, // Uncomment for debugging
             }
         });
 
-        // Animate each pair of features
+        // Add animations for each pair
         for (let i = 0; i < featureItems.length; i += 2) {
-            const currentPair = [featureItems[i], featureItems[i + 1]].filter(Boolean); // Get current two items, filter out undefined if odd number
+            const currentPair = [featureItems[i], featureItems[i + 1]].filter(Boolean);
+            const prevPair = [featureItems[i - 2], featureItems[i - 1]].filter(Boolean); // Will be empty for first pair
 
-            if (i > 0) { // For pairs beyond the first
-                const prevPair = [featureItems[i - 2], featureItems[i - 1]].filter(Boolean);
+            const label = `pair-${i/2}`; // Unique label for each pair's animation start point
 
-                // Add animations to the master timeline
+            if (i === 0) {
+                // First pair animates in at the very start of the section's scroll
+                masterTimeline.fromTo(currentPair, 
+                    { opacity: 0, y: 50 }, 
+                    { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, label);
+            } else {
+                // Subsequent pairs: Fade out previous, then fade in current
                 masterTimeline
-                    .to(prevPair, { opacity: 0, y: -50, duration: 0.5 }, `section${i/2}-start`) // Animate previous pair out
+                    .to(prevPair, { opacity: 0, y: -50, duration: 0.7, ease: "power2.in" }, label)
                     .fromTo(currentPair, 
                         { opacity: 0, y: 50 }, 
-                        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 
-                        `section${i/2}-start`); // Animate current pair in
+                        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, label);
             }
+            // Add a "hold" duration for the current pair before the next one starts
+            masterTimeline.to({}, { duration: 0.8 }, label + "+=0.7"); // Adjust this duration to control how long a pair is fully visible
         }
+
+        // After the loop, ensure the very last pair fades out when the pin ends
+        // This is handled by the end condition of the scrub and the final state of the timeline
+        // If we want an explicit fade out after the last pair is shown, we can add it here.
+        // For scrub:1, the state at the end of the timeline is the final state.
     }
 
 
