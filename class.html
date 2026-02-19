@@ -45,6 +45,10 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 
@@ -126,7 +130,9 @@
           <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
               <a class="text-success px-3 social-link" href="https://x.com/es_shemen_?s=21" target="_blank">
-                <i class="fas fa-hashtag"></i> <!-- Changed from X logo to Hashtag Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                </svg>
               </a>
               <a class="text-success px-3 social-link" href="tel:+256782345678">
                 <i class="fas fa-phone"></i>
@@ -972,5 +978,75 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- Class Page Animations -->
+    <script>
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate Header
+      gsap.from(".container-fluid.mb-5 h4", {
+        scrollTrigger: {
+          trigger: ".container-fluid.mb-5",
+          start: "top 80%",
+        },
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // Animate Section Title
+      gsap.from(".text-center.pb-2 h1", {
+        scrollTrigger: {
+          trigger: ".text-center.pb-2",
+          start: "top 80%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // Animate Swiper Slides
+      gsap.from(".swiper-slide", {
+        scrollTrigger: {
+          trigger: ".swiper",
+          start: "top 80%",
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "back.out(1.7)"
+      });
+
+      // 3D Tilt Hover Effect for Cards - Only specific cards
+      const classCards = document.querySelectorAll(".col-lg-6.mb-5 .card");
+      classCards.forEach(card => {
+        card.style.opacity = "1"; // Ensure cards are visible
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            duration: 0.4,
+            rotationX: (Math.random() - 0.5) * 10,
+            rotationY: (Math.random() - 0.5) * 10,
+            scale: 1.03,
+            ease: "power2.out",
+            overwrite: true
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            duration: 0.4,
+            rotationX: 0,
+            rotationY: 0,
+            scale: 1,
+            ease: "elastic.out(1, 0.5)",
+            overwrite: true
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -41,6 +41,10 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 
@@ -679,4 +683,92 @@
 
 
   </body>
+  <!-- Team Page Animations -->
+  <script>
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Swiper Slides
+    gsap.from(".swiper-slide", {
+      scrollTrigger: {
+        trigger: ".swiper",
+        start: "top 80%",
+      },
+      scale: 0.8,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Animate Section Title
+    gsap.from(".text-center.pb-2 h1", {
+      scrollTrigger: {
+        trigger: ".text-center.pb-2",
+        start: "top 80%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    // Animate Section Headings (Administrators, Supervisors, etc.)
+    gsap.from("section h3", {
+      scrollTrigger: {
+        trigger: "section",
+        start: "top 80%",
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+
+    // Animate Team Member Cards - More specific selector
+    const teamMemberCards = document.querySelectorAll(".team > div");
+    if (teamMemberCards.length > 0) {
+      teamMemberCards.forEach(card => card.style.opacity = "1");
+      
+      gsap.from(teamMemberCards, {
+        scrollTrigger: {
+          trigger: ".team",
+          start: "top 85%",
+        },
+        y: 60,
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.7)"
+      });
+    }
+
+    // 3D Tilt Hover Effect for Team Cards - More specific selector
+    const teamCards = document.querySelectorAll(".team > div");
+    teamCards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          duration: 0.4,
+          rotationX: (Math.random() - 0.5) * 8,
+          rotationY: (Math.random() - 0.5) * 8,
+          scale: 1.05,
+          ease: "power2.out",
+          overwrite: true
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          duration: 0.4,
+          rotationX: 0,
+          rotationY: 0,
+          scale: 1,
+          ease: "elastic.out(1, 0.5)",
+          overwrite: true
+        });
+      });
+    });
+  </script>
 </html>

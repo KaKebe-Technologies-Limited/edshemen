@@ -49,6 +49,72 @@
         });
     }
 
+    function initAboutAnimations() {
+        if (!window.gsap) return;
+
+        // Animate "About Es Shemen" heading
+        const aboutHeading = document.querySelector("#section-counter h2");
+        if (aboutHeading) {
+            const words = splitTextIntoWords(aboutHeading);
+            gsap.from(words, {
+                scrollTrigger: {
+                    trigger: aboutHeading,
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.1,
+                ease: "power3.out"
+            });
+        }
+
+        // Animate Lead Text
+        gsap.from("#section-counter h5", {
+            scrollTrigger: {
+                trigger: "#section-counter h5",
+                start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.3,
+            ease: "power3.out"
+        });
+
+        // Animate Facilities Cards
+        gsap.from(".bg-light .card", {
+            scrollTrigger: {
+                trigger: ".bg-light .card",
+                start: "top 85%",
+            },
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "back.out(1.7)"
+        });
+
+        // Animate Team Cards - Only if elements exist
+        const teamSectionCards = document.querySelectorAll(".ftco-section:not(.img) .card");
+        if (teamSectionCards.length > 0) {
+            // Ensure cards are visible first
+            teamSectionCards.forEach(card => card.style.opacity = "1");
+            
+            gsap.from(teamSectionCards, {
+                scrollTrigger: {
+                    trigger: ".ftco-section",
+                    start: "top 85%",
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+        }
+    }
+
     // Function to initialize testimonial Swiper
     function initTestimonialSwiper() {
         // Destroy existing Swiper instance if it exists to prevent re-initialization issues
@@ -137,6 +203,12 @@
                     initAnimatedGradients();
                     initTestimonialSwiper(); // Re-initialize testimonial Swiper
                 }
+            }, {
+                namespace: 'about',
+                afterEnter() {
+                    $(window).trigger('scroll');
+                    initAboutAnimations();
+                }
             }]
         });
     }
@@ -157,9 +229,13 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
         initAnimatedGradients();
+        initAboutAnimations();
         initTestimonialSwiper(); // Initialize testimonial Swiper on initial load
         // If something loads late (fonts/CSS), run once more after full load.
-        $(window).on('load', initAnimatedGradients);
+        $(window).on('load', function() {
+            initAnimatedGradients();
+            initAboutAnimations();
+        });
     });
     
     
@@ -250,99 +326,75 @@
         ease: "power3.out",
     });
 
-    // Vision, Mission, Motto, and Core Values Cards animation (initial fade/slide)
-    gsap.from(".site-section.bg-light .card", {
-        scrollTrigger: {
-            trigger: ".site-section.bg-light",
-            start: "top 75%",
-            toggleActions: "play none none none",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-    });
-
-    // 3D Tilt Hover Effect for Vision, Mission, Motto Cards
-    document.querySelectorAll(".site-section.bg-light .card").forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            gsap.to(card, {
-                duration: 0.4,
-                rotationX: (Math.random() - 0.5) * 10, // Random small tilt on X
-                rotationY: (Math.random() - 0.5) * 10, // Random small tilt on Y
-                scale: 1.03, // Slight scale up
-                ease: "power2.out",
-                overwrite: true // Prevent stacking animations
-            });
-        });
-
-        card.addEventListener("mouseleave", () => {
-            gsap.to(card, {
-                duration: 0.4,
-                rotationX: 0,
-                rotationY: 0,
-                scale: 1,
-                ease: "elastic.out(1, 0.5)", // More bouncy ease on leave
-                overwrite: true
-            });
-        });
-    });
-
-
-    // Facilities Section Sticky Features animation
-    const facilitiesContainer = document.querySelector(".ftco-section .col-12.wrap-about");
-    const featureItems = gsap.utils.toArray(".ftco-section .services-2");
-    
-    if (facilitiesContainer && featureItems.length > 0) {
-        // Set initial state for all items to be hidden
-        gsap.set(featureItems, { opacity: 0, y: 50 });
-
-        // Calculate total number of pairs
-        const numPairs = Math.ceil(featureItems.length / 2);
-        // Define scroll distance needed for each pair to transition and be visible
-        const scrollPerPair = window.innerHeight * 0.7; // 70% of viewport height per pair animation
-
-        // Create a master timeline for the pinned section
-        const masterTimeline = gsap.timeline({
+    // Vision, Mission, Motto, and Core Values Cards animation - Only on home page
+    const visionCards = document.querySelectorAll(".site-section.bg-light .card");
+    if (visionCards.length > 0) {
+        // Ensure cards are visible first
+        visionCards.forEach(card => card.style.opacity = "1");
+        
+        gsap.from(visionCards, {
             scrollTrigger: {
-                trigger: facilitiesContainer,
-                pin: true,
-                start: "top top", // Start pinning when the top of facilitiesContainer hits the top of the viewport
-                end: `+=${numPairs * scrollPerPair}`, // Total scroll length for the animation sequence
-                scrub: 1, // Smoothly scrub animations
-                // markers: true, // Uncomment for debugging
-            }
+                trigger: ".site-section.bg-light",
+                start: "top 75%",
+                toggleActions: "play none none none",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
         });
+    }
 
-        // Add animations for each pair
-        for (let i = 0; i < featureItems.length; i += 2) {
-            const currentPair = [featureItems[i], featureItems[i + 1]].filter(Boolean);
-            const prevPair = [featureItems[i - 2], featureItems[i - 1]].filter(Boolean); // Will be empty for first pair
+    // 3D Tilt Hover Effect for cards - Only on home page and specific pages
+    const tiltCards = document.querySelectorAll(".site-section.bg-light .card, .ftco-section:not(.img) .card");
+    if (tiltCards.length > 0) {
+        tiltCards.forEach(card => {
+            card.style.opacity = "1"; // Ensure cards are visible
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, {
+                    duration: 0.4,
+                    rotationX: (Math.random() - 0.5) * 10,
+                    rotationY: (Math.random() - 0.5) * 10,
+                    scale: 1.03,
+                    ease: "power2.out",
+                    overwrite: true
+                });
+            });
 
-            const label = `pair-${i/2}`; // Unique label for each pair's animation start point
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    duration: 0.4,
+                    rotationX: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    ease: "elastic.out(1, 0.5)",
+                    overwrite: true
+                });
+            });
+        });
+    }
 
-            if (i === 0) {
-                // First pair animates in at the very start of the section's scroll
-                masterTimeline.fromTo(currentPair, 
-                    { opacity: 0, y: 50 }, 
-                    { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, label);
-            } else {
-                // Subsequent pairs: Fade out previous, then fade in current
-                masterTimeline
-                    .to(prevPair, { opacity: 0, y: -50, duration: 0.7, ease: "power2.in" }, label)
-                    .fromTo(currentPair, 
-                        { opacity: 0, y: 50 }, 
-                        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, label);
-            }
-            // Add a "hold" duration for the current pair before the next one starts
-            masterTimeline.to({}, { duration: 0.8 }, label + "+=0.7"); // Adjust this duration to control how long a pair is fully visible
-        }
 
-        // After the loop, ensure the very last pair fades out when the pin ends
-        // This is handled by the end condition of the scrub and the final state of the timeline
-        // If we want an explicit fade out after the last pair is shown, we can add it here.
-        // For scrub:1, the state at the end of the timeline is the final state.
+    // Facilities Section - Simple fade-in animation (no sticky/absolute positioning)
+    const featureItems = document.querySelectorAll(".ftco-section .services-2");
+    
+    if (featureItems.length > 0) {
+        // Set initial state - just opacity, no position changes
+        gsap.set(featureItems, { opacity: 0, y: 30 });
+
+        gsap.to(featureItems, {
+            scrollTrigger: {
+                trigger: ".ftco-section",
+                start: "top 75%",
+                toggleActions: "play none none none",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
     }
 
 

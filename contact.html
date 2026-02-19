@@ -43,6 +43,10 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
   </head>
@@ -402,5 +406,114 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- Contact Page Animations -->
+    <script>
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate Header
+      gsap.from(".container-fluid.mb-5 h3", {
+        scrollTrigger: {
+          trigger: ".container-fluid.mb-5",
+          start: "top 80%",
+        },
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // Animate Section Title
+      gsap.from(".text-center.pb-2 h1", {
+        scrollTrigger: {
+          trigger: ".text-center.pb-2",
+          start: "top 80%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // Animate Contact Form
+      gsap.from(".contact-form", {
+        scrollTrigger: {
+          trigger: ".contact-form",
+          start: "top 80%",
+        },
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+
+      // Animate Contact Info Items
+      gsap.from(".col-lg-5.mb-5 > div", {
+        scrollTrigger: {
+          trigger: ".col-lg-5.mb-5",
+          start: "top 80%",
+        },
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out"
+      });
+
+      // Animate Map
+      gsap.from(".col-md-12 iframe", {
+        scrollTrigger: {
+          trigger: ".col-md-12",
+          start: "top 85%",
+        },
+        y: 30,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out"
+      });
+
+      // Form Input Focus Animations
+      document.querySelectorAll(".form-control").forEach(input => {
+        input.addEventListener("focus", () => {
+          gsap.to(input, {
+            duration: 0.3,
+            boxShadow: "0 0 0 3px rgba(40, 167, 69, 0.2)",
+            borderColor: "#28a745",
+            ease: "power2.out"
+          });
+        });
+
+        input.addEventListener("blur", () => {
+          gsap.to(input, {
+            duration: 0.3,
+            boxShadow: "0 0 0 0 rgba(40, 167, 69, 0)",
+            borderColor: "",
+            ease: "power2.out"
+          });
+        });
+      });
+
+      // Submit Button Hover Animation
+      const submitBtn = document.getElementById("sendMessageButton");
+      if (submitBtn) {
+        submitBtn.addEventListener("mouseenter", () => {
+          gsap.to(submitBtn, {
+            duration: 0.3,
+            scale: 1.05,
+            ease: "power2.out"
+          });
+        });
+
+        submitBtn.addEventListener("mouseleave", () => {
+          gsap.to(submitBtn, {
+            duration: 0.3,
+            scale: 1,
+            ease: "power2.out"
+          });
+        });
+      }
+    </script>
   </body>
 </html>
